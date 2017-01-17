@@ -2,3 +2,7 @@ GITHUB_API_TOKEN = 'github api token'
 GITHUB_OWNER = 'organization or user'
 GIT_REPOSITORY = 'repository name'
 GIT_LOCAL_REPOSITORY_PATH = 'path/to/work/dir'
+
+MAIL_GITHUB_ID_MAPPING = {
+  'user@email.com' => 'github-user'
+}

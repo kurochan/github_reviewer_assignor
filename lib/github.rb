@@ -7,6 +7,10 @@ class Github
     @client = Octokit::Client.new access_token: token
   end
 
+  def team_members(team_id)
+    @client.team_members(team_id)
+  end
+
   def pull_requests(repository)
     client.pull_requests repository, :accept => 'application/vnd.github.black-cat-preview+json'
   end
