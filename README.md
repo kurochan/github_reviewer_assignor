@@ -3,7 +3,7 @@ github_reviewer_assign_bot
 
 inspired by [git で reviewer を探すスクリプトを作りました / LINE Engineers' Blog](http://developers.linecorp.com/blog/ja/?p=3832)
 
-# How to Run
+# How to run
 ruby 2.3 on Ubuntu16.04 
 
 ```

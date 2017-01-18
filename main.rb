@@ -1,6 +1,6 @@
 require "#{File.expand_path("../", __FILE__)}/config.rb"
 
-['lib', 'ext'].each do |path|
+['lib'].each do |path|
   Dir[File.expand_path("../#{path}", __FILE__) << '/*.rb'].each do |file|
     require file
   end
