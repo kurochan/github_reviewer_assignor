@@ -19,6 +19,10 @@ class Github
     client.pull_request repository, id, :accept => 'application/vnd.github.black-cat-preview+json'
   end
 
+  def get_reviewers(repository, id)
+    client.get "/repos/#{repository}/pulls/#{id}/reviews", :accept => 'application/vnd.github.black-cat-preview+json'
+  end
+
   def add_reviewers(repository, id, reviewers)
     params = {
       :reviewers => reviewers,

@@ -6,6 +6,7 @@ require "#{File.expand_path("../", __FILE__)}/config.rb"
   end
 end
 
+puts "started at: #{Time.now}"
 puts "github repository: #{GITHUB_OWNER}/#{GIT_REPOSITORY}"
 
 git = Git.new(GIT_REPOSITORY, GITHUB_OWNER, GIT_LOCAL_REPOSITORY_PATH)
@@ -37,8 +38,10 @@ reqs.each do |req|
   reviewers = reviewers.map {|email| MAIL_GITHUB_ID_MAPPING[email] ? MAIL_GITHUB_ID_MAPPING[email] : email }
   active_users = reviewers & members - [req_user]
   inactive_users = reviewers - members - [req_user]
+  approved_users = github.get_reviewers("#{GITHUB_OWNER}/#{GIT_REPOSITORY}", req.number)
 
   next if active_users.empty?
+  next unless approved_users.empty?
 
   puts ""
   puts "# #{title}"
